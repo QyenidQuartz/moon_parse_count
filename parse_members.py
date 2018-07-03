@@ -79,5 +79,18 @@ print('{}: {:0.2f}%'.format(FULL_MOON, full_moon_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(LAST_QUARTER, last_quarter_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(WANING_CRESCENT, waning_crescent_count/lines_parsed*100))
 
+dom_count = new_moon_count * 0 + \
+        (waxing_crescent_count + waning_crescent_count) * .25 + \
+        (first_quarter_count + last_quarter_count) * .5 + \
+        (waxing_gibbous_count + waning_gibbous_count) * .75 + \
+        full_moon_count * 1
+sub_count = new_moon_count * 1 + \
+        (waxing_crescent_count + waning_crescent_count) * .75 + \
+        (first_quarter_count + last_quarter_count) * .5 + \
+        (waxing_gibbous_count + waning_gibbous_count) * .25 + \
+        full_moon_count * 0
+
+print('Overall, the ratio of dom/sub is: {:0.2f}'.format(dom_count/sub_count))
+
 print('{} had more than one moon! Whoa!'.format(members_with_multiple_moons))
 print('{} didn\'t have any moons :| get with the program'.format(members_with_no_moons))
