@@ -54,7 +54,7 @@ with open('members.txt') as f:
         if FULL_MOON in line:
             moons_found += 1
             full_moon_count += 1
-        if FULL_MOON in line:
+        if FULL_MOON_FACE in line:
             moons_found += 1
             full_moon_count += 1
         if WANING_GIBBOUS in line:
