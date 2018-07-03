@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 NEW_MOON = "🌑"
+NEW_MOON_FACE = "🌚"
 new_moon_count = 0
 
 WAXING_CRESCENT = "🌒"
@@ -14,6 +15,7 @@ WAXING_GIBBOUS = "🌔"
 waxing_gibbous_count = 0
 
 FULL_MOON = "🌕"
+FULL_MOON_FACE = "🌝"
 full_moon_count = 0
 
 WANING_GIBBOUS = "🌖"
@@ -37,6 +39,9 @@ with open('members.txt') as f:
         if NEW_MOON in line:
             moons_found += 1
             new_moon_count += 1
+        if NEW_MOON_FACE in line:
+            moons_found += 1
+            new_moon_count += 1
         if WAXING_CRESCENT in line:
             moons_found += 1
             waxing_crescent_count += 1
@@ -47,6 +52,9 @@ with open('members.txt') as f:
             moons_found += 1
             waxing_gibbous_count += 1
         if FULL_MOON in line:
+            moons_found += 1
+            full_moon_count += 1
+        if FULL_MOON_FACE in line:
             moons_found += 1
             full_moon_count += 1
         if WANING_GIBBOUS in line:
@@ -70,11 +78,11 @@ print('Total Moons: {}'.format(total_moons_found))
 print('Total Members: {}'.format(int(lines_parsed)))
 print('(that\'s {:0.2f}% of Super Mario Odessey!)'.format(float(total_moons_found)/999*100))
 
-print('{}: {:0.2f}%'.format(NEW_MOON, new_moon_count/lines_parsed*100))
-print('{}: {:0.2f}%'.format(WAXING_CRESCENT, (waxing_crescent_count + waning_crescent_count )/lines_parsed*100))
-print('{}: {:0.2f}%'.format(FIRST_QUARTER, (first_quarter_count + last_quarter_count)/lines_parsed*100))
-print('{}: {:0.2f}%'.format(WAXING_GIBBOUS, (waxing_gibbous_count + waning_gibbous_count)/lines_parsed*100))
-print('{}: {:0.2f}%'.format(FULL_MOON, full_moon_count/lines_parsed*100))
+print('{} & {}: {:0.2f}%'.format(NEW_MOON, NEW_MOON_FACE, new_moon_count/lines_parsed*100))
+print('{} & {}: {:0.2f}%'.format(WAXING_CRESCENT, WANING_CRESCENT, (waxing_crescent_count + waning_crescent_count )/lines_parsed*100))
+print('{} & {}: {:0.2f}%'.format(FIRST_QUARTER, LAST_QUARTER, (first_quarter_count + last_quarter_count)/lines_parsed*100))
+print('{} & {}: {:0.2f}%'.format(WAXING_GIBBOUS, WANING_GIBBOUS, (waxing_gibbous_count + waning_gibbous_count)/lines_parsed*100))
+print('{} & {}: {:0.2f}%'.format(FULL_MOON, FULL_MOON_FACE, full_moon_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(WANING_GIBBOUS, waning_gibbous_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(LAST_QUARTER, last_quarter_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(WANING_CRESCENT, waning_crescent_count/lines_parsed*100))
