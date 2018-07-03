@@ -54,7 +54,7 @@ with open('members.txt') as f:
         if FULL_MOON in line:
             moons_found += 1
             full_moon_count += 1
-        if FULL_MOON_FACE in line:
+        if FULL_MOON in line:
             moons_found += 1
             full_moon_count += 1
         if WANING_GIBBOUS in line:
@@ -87,12 +87,13 @@ print('{} & {}: {:0.2f}%'.format(FULL_MOON, FULL_MOON_FACE, full_moon_count/line
 #print('{}: {:0.2f}%'.format(LAST_QUARTER, last_quarter_count/lines_parsed*100))
 #print('{}: {:0.2f}%'.format(WANING_CRESCENT, waning_crescent_count/lines_parsed*100))
 
-dom_count = new_moon_count * 0 + \
+sub_count = new_moon_count * 0 + \
         (waxing_crescent_count + waning_crescent_count) * .25 + \
         (first_quarter_count + last_quarter_count) * .5 + \
         (waxing_gibbous_count + waning_gibbous_count) * .75 + \
         full_moon_count * 1
-sub_count = new_moon_count * 1 + \
+
+dom_count = new_moon_count * 1 + \
         (waxing_crescent_count + waning_crescent_count) * .75 + \
         (first_quarter_count + last_quarter_count) * .5 + \
         (waxing_gibbous_count + waning_gibbous_count) * .25 + \
